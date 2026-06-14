@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_scale_target
+ablation:
+  disabled_scales: [target]

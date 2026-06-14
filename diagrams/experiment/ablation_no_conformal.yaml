@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_no_conformal
+ablation:
+  use_conformal: false

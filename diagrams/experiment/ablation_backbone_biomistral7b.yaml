@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_backbone_biomistral7b
+model:
+  hidden_dim: 4096

@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_no_adapter
+ablation:
+  use_adapter: false

@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_fs_moe_shared
+ablation:
+  shared_head: true

@@ -1,0 +1,4 @@
+extends: main.yaml
+name: supplementary_noise_05
+data:
+  label_noise: 0.05

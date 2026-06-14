@@ -1,0 +1,8 @@
+extends: main.yaml
+name: supplementary_crossdomain_ctade
+data:
+  n_drugs: 2497
+  n_pts: 11847
+  cold_fraction: 0.4
+  kg_resident_fraction: 0.6
+  seed: 137

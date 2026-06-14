@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_scale_pathway
+ablation:
+  disabled_scales: [pathway]

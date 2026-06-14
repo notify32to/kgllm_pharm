@@ -1,0 +1,58 @@
+name: main
+data:
+  n_drugs: 31847
+  n_pts: 26409
+  rank: 32
+  mol_dim: 768
+  tgt_dim: 1280
+  path_dim: 2600
+  text_dim: 4096
+  rare_max: 0.001
+  mid_max: 0.01
+  rare_quantile: 0.1
+  mid_quantile: 0.4
+  min_positives: 12
+  cold_fraction: 0.4
+  zipf_exponent: 1.07
+  pathway_signal: 1.0
+  target_signal: 0.85
+  molecular_signal: 0.55
+  text_signal: 0.4
+  kg_resident_fraction: 0.7
+  label_noise: 0.0
+  calibration_fraction: 0.15
+  test_fraction: 0.2
+  seed: 42
+model:
+  token_dim: 768
+  hidden_dim: 4096
+  expert_hidden: 1024
+  lora_rank: 32
+  lora_alpha: 64
+  lora_dropout: 0.05
+  mask_fraction: 0.10
+  blend_init: 0.5
+  density_gate_open: true
+optim:
+  adapter_lr: 1.0e-5
+  lora_lr: 1.0e-4
+  weight_decay: 1.0e-2
+  beta1: 0.9
+  beta2: 0.999
+  eps: 1.0e-8
+  warmup_steps: 500
+  epochs: 5
+  batch_size: 4
+  grad_accum: 4
+  max_grad_norm: 1.0
+  scheduler_decay: 0.1
+  amp_dtype: bfloat16
+  loss_balance_lambda: 0.1
+conformal:
+  alpha: 0.15
+ablation:
+  disabled_scales: []
+  use_adapter: true
+  shared_head: false
+  use_conformal: true
+reporting: true

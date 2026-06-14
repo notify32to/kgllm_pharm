@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_kg_schema_full
+data:
+  kg_resident_fraction: 0.82

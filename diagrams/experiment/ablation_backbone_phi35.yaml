@@ -1,0 +1,4 @@
+extends: main.yaml
+name: ablation_backbone_phi35
+model:
+  hidden_dim: 3072

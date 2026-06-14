@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kgllm_pharm"
+version = "0.1.0"
+description = "Multi-scale knowledge-graph-augmented language model for Preferred-Term-level adverse drug reaction prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["pharmacovigilance", "adverse-drug-reaction", "knowledge-graph", "language-model", "conformal-prediction", "mixture-of-experts"]
+dependencies = [
+    "torch==2.3.1",
+    "transformers==4.42.3",
+    "peft==0.11.1",
+    "numpy==1.26.4",
+    "scipy==1.13.1",
+    "scikit-learn==1.5.0",
+    "simple-parsing==0.1.5",
+    "pyyaml==6.0.1",
+]
+
+[project.optional-dependencies]
+real = ["accelerate>=0.30", "sentencepiece>=0.2"]
+dev = ["pytest", "ruff", "black", "isort", "mypy", "pre-commit"]
+
+[project.scripts]
+kgllm-pharm = "kgllm_pharm.gateway.counter:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kgllm_pharm = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["kgllm_pharm"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["B008"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["kgllm_pharm"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src/kgllm_pharm"]
+ignore_missing_imports = true

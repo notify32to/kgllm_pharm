@@ -1,0 +1,6 @@
+extends: main.yaml
+name: supplementary_ood_postcutoff
+data:
+  cold_fraction: 0.6
+  kg_resident_fraction: 0.4
+  seed: 271
